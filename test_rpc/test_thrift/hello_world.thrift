@@ -9,7 +9,7 @@
 #}
 #struct Person {
 #    1: required string name;
-#    2: optional map<string, long> tel;
+    #    2: optional map<string, long> tel;
 #}
 #struct MediaRp {
 #    1: required string uri;
@@ -41,4 +41,5 @@ service format_data {   # 对应服务的类，生成对应文件，服务端和
 service HelloWorld {
     string ping(),
     string say(1:string msg)
+    string bay(1:map<string, string> msg)
 }

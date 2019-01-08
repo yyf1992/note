@@ -26,6 +26,7 @@ if len(sys.argv) <= 1 or sys.argv[1] == '--help':
     print('Functions:')
     print('  string ping()')
     print('  string say(string msg)')
+    print('  string bay( msg)')
     print('')
     sys.exit(0)
 
@@ -116,6 +117,12 @@ elif cmd == 'say':
         print('say requires 1 args')
         sys.exit(1)
     pp.pprint(client.say(args[0],))
+
+elif cmd == 'bay':
+    if len(args) != 1:
+        print('bay requires 1 args')
+        sys.exit(1)
+    pp.pprint(client.bay(eval(args[0]),))
 
 else:
     print('Unrecognized method %s' % cmd)
